@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../static/image/design/logo.png" type="image/x-icon" />
+    <title>Pharmaceutical Detection App</title>
+    {% include 'header.html' %}
+  </head>
+
+  <body id="body">
+    <div class="login-container">
+      <h2 class="text-center">تسجيل الدخول</h2>
+      <form action="#" method="post">
+        {% csrf_token %}
+        <div class="login-form-group">
+          {{form}}
+        </div>
+       
+        <div class="login-form-group">
+          <button type="submit">تسجيل الدخول</button>
+        </div>
+      </form>
+      <p>لا يوجد لديك حساب ؟ <a href="{% url "registr" %}" class="text-success">انشاء حساب جديد</a></p>
+    </div>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

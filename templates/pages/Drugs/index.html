@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+  <div class="centerPage">
+    <div class="container mt-5">
+      <div class="card p-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="mb-0">عرض الادوية</h1>
+          <a href="{% url 'AddDrugs' %}" class="btn btn-success">اضافة دواء جديد</a>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>الاسم</th>
+              <th>الحاله</th>
+              <th>رقم الكود</th>
+              <th>نوع الصنف</th>
+              {% comment %} <th>الصوره</th> {% endcomment %}
+              <th>العمليات</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for medication in medications %}
+            <tr>
+              <td>{{ forloop.counter }}</td>
+              <td>{{ medication.name }}</td>
+              <td>{{ medication.type }}</td>
+              <td>{{ medication.qr_code }}</td>
+              <td>{{ medication.category.name }}</td>
+              {% load static %}
+              {% comment %} <td><img src="{% static '../' %}{{ medication.image.url }}" alt=""></td> {% endcomment %}
+              <td>
+                {% comment %} <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal2">Edit</a> {% endcomment %}
+                <a href="{% url 'delete_medication' medication.id %}" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal2">حذف</a>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <!-- start Form -->
+  <section>
+    <div class="centerPage mt-5 pt-5">
+      <div class="container mt-5 pt-5">
+        <form action="{% url 'qrcode_view' %}" method="post" class="form" enctype="multipart/form-data">
+          {% csrf_token %}
+          <h2>سحب وإسقاط نموذج الصورة</h2>
+          <div id="dropArea" class="drop-area">
+            <label for="fileInput"><i class="fa-solid fa-cloud-arrow-up"></i></label>
+            <input type="file" name="Images" id="fileInput" class="file-input" onchange="handleFileInputChange(event)" required='' multiple accept="image/*" />
+          </div>
+          <div id="bottonstart">
+            <button id="saveButton" class="btn btn-success w-100" type="submit" value="Upload">ارسال</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- end Form -->
+{% endblock %}

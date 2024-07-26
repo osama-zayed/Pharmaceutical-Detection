@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <!-- start Form -->
+  <section>
+    <form action="/add_rating" method="POST" class="" enctype="multipart/form-data">
+      <div class="centerPage pt-5">
+        <div class="container mt-5">
+          {% csrf_token %}
+          <div class="card mb-3" style="  ">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{ image_path }}" class="img-fluid rounded-start" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="text-center">اسم الدواء : {{ name }}</p>
+                  <p class="">
+                    الصنف :
+                    <span>{{ category }}</span>
+                  </p>
+                  <p class="">
+                    الحالة:{% if message == 'المنتج مهرب' %}
+                      <span class="text-danger">{{ message }}</span>
+                    {% elif message == 'المنتج أصلي' %}
+                      <span class="text-success">{{ message }}</span>
+                    {%else %} 
+                    <span >{{ message }}</span>
+                    {% endif %}
+                  </p>
+
+                  <hr />
+                  <p class="text-center">يسعدنا ان تضع اقتراحك</p>
+                  <div class="rating text-center" style="font-size: xx-large;">
+                    <input type="radio" name="stars" id="star1" hidden value="1" checked/>
+                    <label for="star1"><i class="fas fa-star text-warning"></i></label>
+                    <input type="radio" name="stars" id="star2" hidden value="2" />
+                    <label for="star2"><i class="far fa-star text-warning"></i></label>
+                    <input type="radio" name="stars" id="star3" hidden value="3" />
+                    <label for="star3"><i class="far fa-star text-warning"></i></label>
+                    <input type="radio" name="stars" id="star4" hidden value="4" />
+                    <label for="star4"><i class="far fa-star text-warning"></i></label>
+                    <input type="radio" name="stars" id="star5" hidden value="5" />
+                    <label for="star5"><i class="far fa-star text-warning"></i></label>
+                  </div><br />
+                  <textarea name="comment" id="review" cols="30" rows="7" class="w-100" placeholder="أدخل مراجعتك واقتراحاتك للتطوير" required></textarea>
+                  <button type="submit" class="btn btn-success w-100">اضافة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+  <script>
+    const stars = document.querySelectorAll('input[type="radio"]')
+    
+    stars.forEach((star, index) => {
+      star.addEventListener('change', (event) => {
+        const isChecked = star.checked
+        const starIcons = document.querySelectorAll('label i')
+    
+        starIcons.forEach((icon, i) => {
+          if (i <= index) {
+            icon.classList.remove('far')
+            icon.classList.add('fas')
+          } else {
+            icon.classList.remove('fas')
+            icon.classList.add('far')
+          }
+        })
+      })
+    })
+  </script>
+  <!-- end Form -->
+{% endblock %}

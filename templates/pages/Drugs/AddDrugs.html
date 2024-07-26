@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+  <div class="centerPage">
+    <div class="container mt-5">
+      <div class="card p-4">
+        <h1>اضافة صنف</h1>
+        <form action="/add-Drugs" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group mb-3">
+            <label for="name">الاسم</label>
+            <input type="text" class="form-control" id="name" name="name" required />
+          </div>
+          <div class="form-group mb-3">
+            <label for="type">الصنف</label>
+            <div class="form-group mb-3 mt-3" style="text-align: left;">
+              <select class="form-control" id="category" name="category" required>
+                <option disabled >اختر الصنف</option>
+                {% for category in Categorys %}
+                <option value="{{category.id}}">{{category.name}}</option>                
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="type">الحالة</label>
+            <div class="form-group mb-3 mt-3" style="text-align: left;">
+              <select class="form-control" id="model-select" name="model-select" required>
+                <option disabled >اختر حالة الدواء</option>
+                <option value="أصلي">أصلي</option>
+                <option value="تهريب">تهريب</option>
+              </select>
+            </div>
+          </div>
+          <div id="dropArea" class="drop-area">
+            <label for="fileInput"><i class="fa-solid fa-cloud-arrow-up"></i></label>
+            <input type="file" name="file" id="fileInput" class="file-input" onchange="handleFileInputChange(event)" required/>
+          </div>
+
+          <button type="submit" class="btn btn-success">اضافة</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

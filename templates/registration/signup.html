@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../static/image/design/logo.png" type="image/x-icon" />
+    <title>Pharmaceutical Detection App</title>
+    {% include 'header.html' %}
+  </head>
+
+  <body id="body">
+    <div class="login-container">
+      <h2 class="text-center">انشاء حساب</h2>
+      <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <div class="login-form-group">{{ form.username.label_tag }}
+          {{ form.username }}</div>
+        <div class="login-form-group">{{ form.email.label_tag }}
+          {{ form.email }}
+          {{ form.email.errors }}</div>
+        <div class="login-form-group">{{ form.password1.label_tag }}
+          {{ form.password1 }}</div>
+        <div class="login-form-group">{{ form.password2.label_tag }}
+          {{ form.password2 }}</div>
+        <div class="login-form-group">
+          <button type="submit">إنشاء الحساب</button>
+        </div>
+      </form>
+      <p>
+        لديك حساب بالفعل ؟ <a href="{% url 'login' %}" class="text-success">تسجيل الدخول</a>
+      </p>
+    </div>
+
+    {% include 'footer.html' %}
+    {% if messages %}
+      <script>
+        {% for message in messages %}
+          {% if message.tags == 'success' %}
+            toastr.success('{{ message }}', '', { positionClass: 'toast-top-left' });
+          {% elif message.tags == 'error' %}
+            toastr.error('{{ message }}', '', { positionClass: 'toast-top-left' });
+          {% endif %}
+        {% endfor %}
+    </script>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h1>عرض التقييمات</h1>
+    {% for rating in ratings %}
+      <div class="card mt-3 mb-3">
+        <div class="card-body">
+          <h5 class="card-title">التقييم #{{ forloop.counter }}</h5>
+          <p class="card-text">{{ rating.comment }}</p>
+          <p class="card-text">
+            عدد النجوم: 
+            {% for star in '12345' %}
+              {% if forloop.counter <= rating.stars %}
+                <i class="fas fa-star"></i>
+              {% else %}
+                <i class="far fa-star"></i>
+              {% endif %}
+            {% endfor %}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

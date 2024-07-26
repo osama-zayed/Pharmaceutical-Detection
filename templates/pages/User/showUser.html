@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="centerPage">
+    <div class="container mt-5">
+      <div class="card p-4">
+        <h1>المستخدمين</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>الاسم</th>
+              <th>الايميل</th>
+              <th>الصلاحية</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            {% if request.user != user %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    {% if user.is_superuser %}
+                        <td>مسؤول</td>
+                    {% else %}
+                        <td>عضو</td>
+                    {% endif %}
+                    {% if user.is_active %}
+                        <td>
+                            <a href="{% url 'toggle_activation' user_id=user.id %}" class="btn btn-success btn-sm">نشط</a>
+                        </td>
+                    {% else %}
+                        <td>
+                            <a href="{% url 'toggle_activation' user_id=user.id %}" class="btn btn-danger btn-sm">غير نشط</a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endif %}
+        {% endfor %}
+            <!-- You can add more user rows here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal 1 -->
+  <div class="modal fade" id="editModal1" tabindex="-1" role="dialog" aria-labelledby="editModal1Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModal1Label">Edit User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <!-- Add your edit form here -->
+          <p>Previous Data:</p>
+          <!-- Display previous data here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Modal 1 -->
+  <div class="modal fade" id="deleteModal1" tabindex="-1" role="dialog" aria-labelledby="deleteModal1Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModal1Label">Delete User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <!-- Add your delete confirmation message here -->
+          <p>Are you sure you want to delete this user?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal 2 -->
+  <div class="modal fade" id="editModal2" tabindex="-1" role="dialog" aria-labelledby="editModal2Label" aria-hidden="true">
+    <!-- Add your edit modal for second user here -->
+  </div>
+
+  <!-- Delete Modal 2 -->
+  <div class="modal fade" id="deleteModal2" tabindex="-1" role="dialog" aria-labelledby="deleteModal2Label" aria-hidden="true">
+    <!-- Add your delete modal for second user here -->
+  </div>
+{% endblock %}

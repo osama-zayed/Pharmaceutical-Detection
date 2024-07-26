@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../static/image/design/logo.png" type="image/x-icon" />
+    <title>تطبيق كشف الادوية المهربة</title>
+    {% include 'header.html' %}
+  </head>
+
+  <body id="body">
+    <!-- start header -->
+    <header>
+      <!-- <header id="header"> -->
+      <div class="profile">
+        <img src="../static/image/design/logo.jpg" alt="" />
+        <h4>تطبيق كشف الادوية المهربة</h4>
+      </div>
+
+      <!-- start navbar -->
+      <nav>
+        <ul>
+          <!-- class="active" -->
+          <li>
+            <a href="{% url 'index' %}"><i class="fa-solid fa-house"></i> الرئيسية</a>
+          </li>
+          <li>
+            <a href="{% url 'about_us' %}"><i class="fa-solid fa-book"></i> لمحة عنا</a>
+          </li>
+          <li>
+            <a href="{% url 'start' %}"><i class="fa-solid fa-play"></i> البداية</a>
+          </li>
+          <li>
+            <a href="{% url 'Review' %}"><i class="fa-solid fa-square-poll-vertical"></i> التقييمات</a>
+          </li>
+          {% if request.user.is_authenticated and request.user.is_superuser %}
+          <li>
+            <a href="{% url 'Category' %}"><i class="fas fa-pills"></i>الاصناف</a>
+          </li>
+          <li>
+            <a href="{% url 'Drugs' %}"><i class="fas fa-pills"></i> الادوية</a>
+          </li>
+          <li>
+            <a href="{% url 'showUser' %}"><i class="fa-solid fa-user"></i> المستخدمين</a>
+          </li>
+          {% endif %}
+
+          {% if user.is_authenticated %}
+            <li>
+              <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</a>
+            </li>
+          {% endif %}
+          {% comment %} <li>
+            <a href=""><i class="fa-solid fa-book"></i> Decumentation</a>
+          </li> {% endcomment %}
+        </ul>
+      </nav>
+      <!-- end navbar -->
+
+    </header>
+    {% if messages %}
+    <script>
+      {% for message in messages %}
+        {% if message.tags == 'success' %}
+          toastr.success('{{ message }}', '', { positionClass: 'toast-top-left' });
+        {% elif message.tags == 'error' %}
+          toastr.error('{{ message }}', '', { positionClass: 'toast-top-left' });
+        {% endif %}
+      {% endfor %}
+    </script>
+  {% endif %}
+
+    <!-- start mobile -->
+    <i class="fa-solid fa-bars" id="menu"></i>
+
+    <main>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

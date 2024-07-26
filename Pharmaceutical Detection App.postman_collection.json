@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "4a6a78e9-c728-4dcf-abc6-5caeb6a6f55e",
+		"name": "Pharmaceutical Detection App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28499464",
+		"_collection_link": "https://cloudy-water-880154.postman.co/workspace/89fd0a15-2120-4dfe-8bf5-5f6266b873db/collection/28499464-4a6a78e9-c728-4dcf-abc6-5caeb6a6f55e?action=share&source=collection_link&creator=28499464"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "osama7",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "osama",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "create_account",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json ",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "osama909224",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "osama",
+							"type": "text"
+						},
+						{
+							"key": "confirm_password",
+							"value": "osama",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "osama@gmil.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/create_account/"
+			},
+			"response": []
+		},
+		{
+			"name": "check",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 63e321100140f9866574d1fc5789cbb09f3570af",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/H:/project/python/كشف الادويه المزوره/image1.jpg"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/check/"
+			},
+			"response": []
+		},
+		{
+			"name": "rating",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json ",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 63e321100140f9866574d1fc5789cbb09f3570af",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "stars",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "سي",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/rating/"
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json ",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 3a74e9bd5ec66c94359d9fad9e05c72e99635171",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://127.0.0.1:8000/api/logout/"
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json ",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 117aa4f08f504f2fbd38757225480dedb1d283b3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://127.0.0.1:8000/api/me/"
+			},
+			"response": []
+		}
+	]
+}
