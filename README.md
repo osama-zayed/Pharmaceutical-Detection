@@ -40,8 +40,16 @@ In addition to the backend, there is a related frontend application that complem
 Screenshots
 Here are some images showcasing the application:
 
-https://osamazayed.com/images/medecine_app/1.jpg
-https://osamazayed.com/images/medecine_app/2.jpg
-https://osamazayed.com/images/medecine_app/3.jpg
-https://osamazayed.com/images/medecine_app/4.jpg
-https://osamazayed.com/images/medecine_app/5.jpg
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+<img src="https://osamazayed.com/images/medecine_app/1.jpg" alt="Screenshot 1" style="width: 48%; margin-bottom: 10px;">
+
+<img src="https://osamazayed.com/images/medecine_app/2.jpg" alt="Screenshot 2" style="width: 48%; margin-bottom: 10px;">
+
+<img src="https://osamazayed.com/images/medecine_app/3.jpg" alt="Screenshot 3" style="width: 48%; margin-bottom: 10px;">
+
+<img src="https://osamazayed.com/images/medecine_app/4.jpg" alt="Screenshot 4" style="width: 48%; margin-bottom: 10px;">
+
+<img src="https://osamazayed.com/images/medecine_app/5.jpg" alt="Screenshot 5" style="width: 48%; margin-bottom: 10px;">
+
+</div>
