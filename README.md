@@ -1,6 +1,7 @@
+```markdown
 # Pharmaceutical Detection App
 
-![Pharmaceutical Detection App](https://osamazayed.com/images/portfolio-11.webp)
+![Pharmaceutical Detection App]([https://pfst.cf2.poecdn.net/base/image/64baf9e09683dbc0db6091ae9af216fe346b9a2594e08d6fefa92d4ecb2da51b?w=1080&h=557&pmaid=415651538](https://osamazayed.com/images/portfolio-11.webp))
 
 ## Welcome
 
@@ -19,35 +20,43 @@ To install the project, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/osama-zayed/Pharmaceutical-Detection.git
-Navigate to the project directory:
-bash
-Copy
-cd Pharmaceutical-Detection
-Install the required dependencies:
-bash
-Copy
-npm install
-Usage
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd Pharmaceutical-Detection
+   ```
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+
+## Usage
+
 Start the application:
-
-bash
-Copy
+```bash
 npm start
+```
 
-Related Application
+## Related Application
+
 In addition to the backend, there is a related frontend application that complements the functionality of the Pharmaceutical Detection App. This frontend is designed to provide users with a seamless experience in accessing the features of the application.
 
-Screenshots
+### Screenshots
+
 Here are some images showcasing the application:
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <img src="https://osamazayed.com/images/medecine_app/1.jpg" alt="Screenshot 1" style="width: 28%; height: auto; margin: 5px;">
+    <img src="https://osamazayed.com/images/medecine_app/2.jpg" alt="Screenshot 2" style="width: 28%; height: auto; margin: 5px;">
+    <img src="https://osamazayed.com/images/medecine_app/3.jpg" alt="Screenshot 3" style="width: 28%; height: auto; margin: 5px;">
+    <img src="https://osamazayed.com/images/medecine_app/4.jpg" alt="Screenshot 4" style="width: 45%; height: auto; margin: 5px;">
+    <img src="https://osamazayed.com/images/medecine_app/5.jpg" alt="Screenshot 5" style="width: 45%; height: auto; margin: 5px;">
+</div>
 
-<img src="https://osamazayed.com/images/medecine_app/1.jpg" alt="Screenshot 1" style="width: 30%; height: auto; margin: 5px;">
+## License
 
-<img src="https://osamazayed.com/images/medecine_app/2.jpg" alt="Screenshot 2" style="width: 30%; height: auto; margin: 5px;">
-
-<img src="https://osamazayed.com/images/medecine_app/3.jpg" alt="Screenshot 3" style="width: 30%; height: auto; margin: 5px;">
-
+This project is licensed under the MIT License.
+```
 <img src="https://osamazayed.com/images/medecine_app/4.jpg" alt="Screenshot 4" style="width: 45%; height: auto; margin: 5px;">
 
 <img src="https://osamazayed.com/images/medecine_app/5.jpg" alt="Screenshot 5" style="width: 45%; height: auto; margin: 5px;">
