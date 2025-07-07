@@ -33,3 +33,15 @@ Start the application:
 bash
 Copy
 npm start
+
+Related Application
+In addition to the backend, there is a related frontend application that complements the functionality of the Pharmaceutical Detection App. This frontend is designed to provide users with a seamless experience in accessing the features of the application.
+
+Screenshots
+Here are some images showcasing the application:
+
+https://osamazayed.com/images/medecine_app/1.jpg
+https://osamazayed.com/images/medecine_app/2.jpg
+https://osamazayed.com/images/medecine_app/3.jpg
+https://osamazayed.com/images/medecine_app/4.jpg
+https://osamazayed.com/images/medecine_app/5.jpg
